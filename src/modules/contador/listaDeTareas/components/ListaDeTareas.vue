@@ -3,7 +3,7 @@
       <h2>Lista de tareas:</h2>
       <input type="text" v-model="nuevaTarea" @keyup.enter="addTarea" />
       <ul>
-        <li v-for="(tarea, index) in tareas" :key="tarea.id">{{ tarea.texto }}
+        <li v-for="(tarea) in tareas" :key="tarea.id">{{ tarea.texto }}
             <button @click="borrarTarea(tarea)">Borrar</button>
         </li>
       </ul>
