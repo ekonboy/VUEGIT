@@ -4,13 +4,13 @@
         <Form :validation-schema="schema" @submit="onSubmit">
             
             <div class="form">
-            <label for="nombre">Nombre:</label> 
+            <label for="nombre">Nombre:</label> <br/>
             <Field v-model="nombre" type="text" name="nombre" id="nombre" placeholder="ingresa tu nombre" />
             <ErrorMessage name="nombre"></ErrorMessage>
             </div>
            
             <div class="form">
-            <label for="email">Email:</label> 
+            <label for="email">Email:</label> <br/>
             <Field v-model="email"  type="email" name="email"  id="email" placeholder="ingresa tu mail" />
             <ErrorMessage name="email"></ErrorMessage>
             <div class="form"> 
@@ -31,11 +31,12 @@ const email = ref('');
 
 
 const onSubmit = () => {
-    RegistrarStore.guardarRegistro(nombre.value, email.value)
+    RegistrarStore.guardarRegistro()
     console.log('se ha enviado correctamente');
 
 }
 </script>
 <style scoped>
-.form {margin-bottom: 20px;} 
+.form {margin-bottom: 20px;}
+button {margin-top: 20px;}
 </style>
